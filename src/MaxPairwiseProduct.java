@@ -18,49 +18,58 @@ public class MaxPairwiseProduct {
 
     static long getMaxPairwiseProductFast(int[] numbers) {
 
-        if(numbers == null) {
-            return 1;
-        }
-
         int n = numbers.length;
-        int indexOfMax1 = -1;
-        for(int i = 0; i < n; i++) {
-            if(indexOfMax1 == -1 || numbers[i] > numbers[indexOfMax1]) {
-                indexOfMax1 = i;
+        int max_index1 = -1;
+        for(int i = 0; i < n; ++i) {
+            if((max_index1 == -1) || (numbers[i] > numbers[max_index1])) {
+                max_index1 = i;
             }
         }
 
-        int indexOfMax2 = -1;
-        for(int j = 0; j < n; j++) {
-            if((numbers[j] != numbers[indexOfMax1])
-                && (indexOfMax2 == -1 || numbers[j] > numbers[indexOfMax2])) {
-                indexOfMax2 = j;
+        int max_index2 = -1;
+        for(int j = 0; j < n; ++j) {
+            if((j != max_index1) && ((max_index2 == -1) || (numbers[j] >= numbers[max_index2]))) {
+                max_index2 = j;
             }
         }
 
-        // depends on kind of data - boundary values
-        long valueMax1 = 1;
-        if(indexOfMax1 != -1) {
-            valueMax1 = Long.valueOf(numbers[indexOfMax1]);
-        }
-
-        long valueMax2 = 1;
-        if(indexOfMax2 != -1) {
-            valueMax2 = Long.valueOf(numbers[indexOfMax2]);
-        }
-        return valueMax1 * valueMax2;
+        System.out.println("Indexes in Fast solution: " + max_index1 + " " + max_index2);
+        return (long) numbers[max_index1] * numbers[max_index2];
     }
 
 
     public static void main(String[] args) {
+
+        while(true) {
+            // Range
+            int max = 100000, min = 2;
+            int randomNum = new Random().nextInt((max - min) + 1) + min;
+            System.out.println("Size: " + randomNum);
+            int[] array = new int[randomNum];
+            for(int i = 0; i < randomNum; i++) {
+                int maxValue = 100000, minValue = 0;
+                array[i] = new Random().nextInt((maxValue - minValue) + 1) + minValue;
+            }
+            for(int i = 0; i < randomNum; i++) {
+                System.out.print(array[i] + " ");
+            }
+            System.out.println();
+            long bruteForceSolution = getMaxPairwiseProduct(array);
+            long optimizedSolution = getMaxPairwiseProductFast(array);
+            if(bruteForceSolution == optimizedSolution) {
+                System.out.println("OK");
+            } else {
+                System.out.println("Wrong answer: " + bruteForceSolution + " " + optimizedSolution);
+                break;
+            }
+        }
+
         FastScanner scanner = new FastScanner(System.in);
         int n = scanner.nextInt();
         int[] numbers = new int[n];
         for (int i = 0; i < n; i++) {
             numbers[i] = scanner.nextInt();
         }
-        //System.out.println(getMaxPairwiseProduct(numbers));
-        System.out.println(getMaxPairwiseProductFast(numbers));
     }
 
     static class FastScanner {
