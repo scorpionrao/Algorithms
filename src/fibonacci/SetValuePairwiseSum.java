@@ -1,3 +1,5 @@
+package fibonacci;
+
 public class SetValuePairwiseSum {
     /*
     Eg: Find a pair that will sum to the required value

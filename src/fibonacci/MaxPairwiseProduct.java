@@ -1,3 +1,5 @@
+package fibonacci;
+
 import java.util.*;
 import java.io.*;
 
@@ -39,10 +41,10 @@ public class MaxPairwiseProduct {
 
 
     public static void main(String[] args) {
-
+/*
         while(true) {
             // Range
-            int max = 100000, min = 2;
+            int max = 200, min = 2;
             int randomNum = new Random().nextInt((max - min) + 1) + min;
             System.out.println("Size: " + randomNum);
             int[] array = new int[randomNum];
@@ -63,13 +65,17 @@ public class MaxPairwiseProduct {
                 break;
             }
         }
-
+*/
         FastScanner scanner = new FastScanner(System.in);
         int n = scanner.nextInt();
         int[] numbers = new int[n];
         for (int i = 0; i < n; i++) {
             numbers[i] = scanner.nextInt();
         }
+
+        long bruteForceSolution = getMaxPairwiseProductFast(numbers);
+        System.out.println(bruteForceSolution);
+        
     }
 
     static class FastScanner {

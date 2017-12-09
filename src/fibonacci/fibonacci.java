@@ -1,3 +1,5 @@
+package fibonacci;
+
 import java.util.Scanner;
 
 public class fibonacci {
@@ -10,6 +12,13 @@ public class fibonacci {
 
     Output:
     - Payload : long
+
+    Analyze:
+    - Finalize Time complexity
+    - Finalize Space complexity
+
+    Implement:
+    - Start implementing
 
     Test:
     - Test on few small manual tests - done with n = 3, 10.
