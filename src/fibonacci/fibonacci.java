@@ -1,5 +1,6 @@
 package fibonacci;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class fibonacci {
@@ -40,6 +41,29 @@ public class fibonacci {
     return calc_fib(n - 1) + calc_fib(n - 2);
   }
 
+  private static long naive(int n) {
+    if(n <= 1) {
+      return n;
+    }
+    return naive(n-1) + naive(n-2);
+  }
+
+  private static long fast(int n) {
+
+    if(n <= 1) {
+      return n;
+    }
+    int previous = 0;
+    int current = 1;
+
+    for( int i = 2; i <= n; i++) {
+      int temp = current;
+      current = previous + current;
+      previous = temp;
+    }
+    return current;
+  }
+
   private static long calc_fibFast(int n) {
     if (n <= 1)
       return n;
@@ -56,6 +80,21 @@ public class fibonacci {
   }
 
   public static void main(String args[]) {
+
+    while(true) {
+      int maxInput = 60;
+      int minInput = 10;
+      int randomNum = new Random().nextInt((maxInput - minInput) + 1) + minInput;
+      System.out.println("Size:" + randomNum);
+      long naiveSolution = naive(randomNum);
+      long fastSolution = fast(randomNum);
+      if(naiveSolution == fastSolution) {
+        System.out.println("OK");
+      } else {
+        System.out.println("Wrong answer: " + naiveSolution + " " + fastSolution);
+        break;
+      }
+    }
 
     /*while(true) {
       // Range

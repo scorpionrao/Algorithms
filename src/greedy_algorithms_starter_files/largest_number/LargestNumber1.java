@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class LargestNumber {
+public class LargestNumber1 {
     private static String largestNumber(String[] a) {
         //write your code here
         String result = "";

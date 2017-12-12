@@ -2,6 +2,14 @@ package greedy;
 
 import java.util.Scanner;
 
+/*
+GREEDY PROBLEM:
+
+- MAKE A GREEDY SAFE MOVE - max, min, leftmost, rightmost, first
+- PROVE SAFETY
+- SOLVE SUBPROBLEM
+- ESTIMATE RUNNING TIME
+ */
 public class FractionalKnapsack {
 
     public static double getMaxValue(int capacity, int[] values, int[] weights) {

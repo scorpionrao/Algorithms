@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class CoveringSegments {
+public class CoveringSegments1 {
 
     private static int[] optimalPoints(Segment[] segments) {
         //write your code here

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class DifferentSummands {
+public class DifferentSummands1 {
     private static List<Integer> optimalSummands(int n) {
         List<Integer> summands = new ArrayList<Integer>();
         //write your code here

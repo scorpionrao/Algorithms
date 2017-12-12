@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class DotProduct {
+public class DotProduct1 {
     private static long maxDotProduct(int[] a, int[] b) {
         //write your code here
         long result = 0;

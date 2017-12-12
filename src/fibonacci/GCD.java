@@ -15,6 +15,22 @@ public class GCD {
     return current_gcd;
   }
 
+  private static int naive(int a, int b) {
+    int current_gcd = 1;
+    for(int i = 2; i <= a && i <= b; i++) {
+      if(a % i == 0 && b % i == 0) {
+        current_gcd = i;
+      }
+    }
+    return current_gcd;
+  }
+  private static int recursiongcd(int a, int b) {
+    if(b == 0) {
+      return a;
+    }
+    return gcdFast(b, a % b);
+  }
+
   private static int gcdFast(int a, int b) {
 
     if(b == 0) {

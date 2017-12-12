@@ -21,6 +21,27 @@ public class FibonacciHuge {
         return (long) (current % m);
     }
 
+    private static long fast(long n, long m) {
+        if(n <= 1) {
+            return n;
+        }
+
+        List<Integer> list = new ArrayList<>();
+        list.add(0);
+        list.add(1);
+
+        int i = 0;
+        while(!(list.get(i) == 0 && list.get(i+1) == 1)) {
+            long currentModM = list.get(i) % m;
+            long previousModM = list.get(i+1) % m;
+            list.add((int) (currentModM + previousModM % m));
+            i++;
+        }
+        int pisatanoPeriod = list.size() - 2;
+        int index = (int) (n % pisatanoPeriod);
+        return list.get(index);
+    }
+
     private static long getFibonacciHugeFast(long n, long m) {
 
         if (n <= 1) { return n; }

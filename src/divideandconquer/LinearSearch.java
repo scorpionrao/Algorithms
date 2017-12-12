@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class LinearSearch {
 
     /*
-
     Input: Array of Integers
     Input source: User provided
     Output: IsElementThere ? Index of element ?
@@ -44,12 +43,19 @@ public class LinearSearch {
     O(1) * n --> O(n)
 
     int LinearSearchIterative(A, low, high, search) {
+        while(low <= high) {
+            if(A[low] == search)
+                return low;
+            low = low + 1;
+        }
+        return NOT FOUND
+
         for(int i=low; i<=high; i++) {
             if(A[low] == search) {
                 return i;
             }
         }
-        return very large index;
+        return NOT FOUND
     }
      */
 

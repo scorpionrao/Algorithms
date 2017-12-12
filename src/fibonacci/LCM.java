@@ -1,5 +1,6 @@
 package fibonacci;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class LCM {
@@ -8,6 +9,15 @@ public class LCM {
       if (l % a == 0 && l % b == 0)
         return l;
 
+    return (long) a * b;
+  }
+
+  private static long naive(int a, int b) {
+    for(long l = 1; l <= (long) a * b; l++) {
+      if(l % a == 0 && l % b == 0) {
+        return l;
+      }
+    }
     return (long) a * b;
   }
 
@@ -27,6 +37,33 @@ public class LCM {
   }
 
   public static void main(String args[]) {
+
+    while(true) {
+      int[] inputs = new int[2];
+      int minInput = 1, maxInput = 2000;
+      for(int i = 0; i < inputs.length; i++) {
+        inputs[i] = new Random().nextInt((maxInput - minInput) + 1) + minInput;
+      }
+
+      if(inputs[0] < inputs[1]) {
+        int temp = inputs[0];
+        inputs[0] = inputs[1];
+        inputs[1] = temp;
+      }
+      System.out.println("Input :");
+      for(int i = 0; i < inputs.length; i++) {
+        System.out.print(inputs[i] + " ");
+      }
+      System.out.println();
+      long naiveSolution = naive(inputs[0], inputs[1]);
+      long fastSolution = lcmFast(inputs[0], inputs[1]);
+      if(naiveSolution == fastSolution) {
+        System.out.println("OK");
+      } else {
+        System.out.println("Wrong answer: " + naiveSolution + " " + fastSolution);
+        break;
+      }
+    }
 /*
     while(true) {
       int[] array = new int[2];
