@@ -1,3 +1,5 @@
+package divideandconquer;
+
 import java.util.Scanner;
 
 public class Inversions {
