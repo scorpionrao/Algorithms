@@ -3,12 +3,12 @@ package greedy;
 import java.util.Scanner;
 
 /*
-GREEDY PROBLEM:
+    GREEDY PROBLEM - FRACTIONAL KNAPSACK:
 
-- MAKE A GREEDY SAFE MOVE - max, min, leftmost, rightmost, first
-- PROVE SAFETY
-- SOLVE SUBPROBLEM
-- ESTIMATE RUNNING TIME
+    - MAKE A GREEDY SAFE MOVE - max, min, leftmost, rightmost, first
+    - PROVE SAFETY
+    - SOLVE SUBPROBLEM
+    - ESTIMATE RUNNING TIME
  */
 public class FractionalKnapsack {
 
