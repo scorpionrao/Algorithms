@@ -10,9 +10,9 @@ public class DiscreteKnapsack {
      */
 
     /*
-        Pseudo Code: For discrete Knapsack WITH repetitions, we solve for each W by playing with each item.
+        Pseudo Code: For discrete Knapsack1 WITH repetitions, we solve for each W by playing with each item.
 
-        Knapsack(W) {
+        Knapsack1(W) {
             value(0) = 0
             for(w = 1 to W) {
                 value(w) = 0;
@@ -31,9 +31,9 @@ public class DiscreteKnapsack {
      */
 
     /*
-        Pseudo Code: For discrete Knapsack WITHOUT repetitions, we solve for each item by playing with each W.
+        Pseudo Code: For discrete Knapsack1 WITHOUT repetitions, we solve for each item by playing with each W.
 
-        Knapsack(W) {
+        Knapsack1(W) {
             // optimization used for recursive only
             if w is in hash table {return value(w)}
             value[][]
@@ -55,7 +55,7 @@ public class DiscreteKnapsack {
                 }
                 // RECURSIVE SOLUTION
                 if(w(item) <= w) {
-                    temp = Knapsack(w - w(item)) + v(item);
+                    temp = Knapsack1(w - w(item)) + v(item);
                     if(value(w, item) < temp) {
                         value(w, item) = temp;
                     }

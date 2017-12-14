@@ -1,6 +1,8 @@
+package dynamic_programming_starter_files.placing_parentheses;
+
 import java.util.Scanner;
 
-public class PlacingParentheses {
+public class PlacingParentheses1 {
     private static long getMaximValue(String exp) {
       //write your code here
       return 0;

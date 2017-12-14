@@ -1,6 +1,8 @@
+package dynamic_programming_starter_files.edit_distance;
+
 import java.util.*;
 
-class EditDistance {
+class EditDistance1 {
   public static int EditDistance(String s, String t) {
     //write your code here
     return 0;

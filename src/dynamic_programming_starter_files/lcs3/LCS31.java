@@ -1,6 +1,8 @@
+package dynamic_programming_starter_files.lcs3;
+
 import java.util.*;
 
-public class LCS3 {
+public class LCS31 {
 
     private static int lcs3(int[] a, int[] b, int[] c) {
         //Write your code here

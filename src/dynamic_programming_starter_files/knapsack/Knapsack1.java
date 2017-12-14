@@ -1,6 +1,8 @@
+package dynamic_programming_starter_files.knapsack;
+
 import java.util.*;
 
-public class Knapsack {
+public class Knapsack1 {
     static int optimalWeight(int W, int[] w) {
         //write you code here
         int result = 0;

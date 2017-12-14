@@ -1,6 +1,8 @@
+package dynamic_programming_starter_files.primitive_calculator;
+
 import java.util.*;
 
-public class PrimitiveCalculator {
+public class PrimitiveCalculator1 {
     private static List<Integer> optimal_sequence(int n) {
         List<Integer> sequence = new ArrayList<Integer>();
         while (n >= 1) {
