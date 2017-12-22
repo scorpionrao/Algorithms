@@ -84,7 +84,7 @@ public class fibonacci {
     while(true) {
       int maxInput = 60;
       int minInput = 10;
-      int randomNum = new Random().nextInt((maxInput - minInput) + 1) + minInput;
+      int randomNum = new Random().nextInt(maxInput - minInput + 1) + minInput;
       System.out.println("Size:" + randomNum);
       long naiveSolution = naive(randomNum);
       long fastSolution = fast(randomNum);
