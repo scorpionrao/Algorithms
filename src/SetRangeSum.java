@@ -1,8 +1,5 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class SetRangeSum {
 
@@ -10,8 +7,6 @@ public class SetRangeSum {
     PrintWriter out;
     StringTokenizer st;
     boolean eof;
-
-    // Splay tree implementation
 
     // Vertex of a splay tree
     class Vertex {
