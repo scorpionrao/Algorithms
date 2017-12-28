@@ -1,3 +1,5 @@
+package graphs.undirectedgraphs;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,35 +19,38 @@ public class ConnectedComponents {
             adjacentList[x - 1].add(y - 1);
             adjacentList[y - 1].add(x - 1);
         }
-        System.out.println(numOfConnectedComponents(adjacentList));
+        System.out.println(dfs(adjacentList));
         scanner.close();
     }
 
-    private static int numOfConnectedComponents(ArrayList<Integer>[] adjacentList) {
+    private static int dfs(ArrayList<Integer>[] adjacentList) {
         // DFS to explore connectivity between x and y */
         boolean[] visited = new boolean[adjacentList.length];
-        int result = 1;
         for(int i = 0; i < adjacentList.length; i++) {
-            if(!visited[i]) {
-                dfs(i, adjacentList, visited);
-                result++;
+            visited[i] = false;
+        }
+        int numOfComponents = 0;
+        for(int rootVertex = 0; rootVertex < adjacentList.length; rootVertex++) {
+            if(!visited[rootVertex]) {
+                explore(rootVertex, adjacentList, visited);
+                // specific to this problem
+                numOfComponents = numOfComponents + 1;
             }
         }
-        return result - 1;
+        return numOfComponents;
     }
 
-    private static int dfs(int vertex, ArrayList<Integer>[] adjacentList,
-                           boolean[] visited) {
+    private static void explore(int rootVertex,
+                               ArrayList<Integer>[] adjacentList,
+                               boolean[] visited) {
 
         // All connected vertices have same count of CC.
-        visited[vertex] = true;
+        visited[rootVertex] = true;
         // recursively explore unvisited adjacent vertices
-        for(int neighbor : adjacentList[vertex]) {
-            if(!visited[neighbor]) {
-                dfs(neighbor, adjacentList, visited);
+        for(int oppositeVertex : adjacentList[rootVertex]) {
+            if(!visited[oppositeVertex]) {
+                explore(oppositeVertex, adjacentList, visited);
             }
         }
-        // not reached
-        return 0;
     }
 }

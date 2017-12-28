@@ -1,3 +1,5 @@
+package datastructures.binarysearchtree.ProgrammingAssignment4.rope;
+
 import java.io.*;
 import java.util.*;
 
@@ -38,7 +40,7 @@ class RopeProblem1 {
 	}
 
 	public static void main( String[] args ) throws IOException {
-		new RopeProblem().run();
+		//new RopeProblem().run();
 	}
 	public void run() throws IOException {
 		FastScanner in = new FastScanner();
