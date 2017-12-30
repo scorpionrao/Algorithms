@@ -49,21 +49,33 @@ public class directedgraph {
             SHORTEST PATH = least number of edges, least number of flights from src to dest
             DISTANCE = length of shortest path
 
-            BFS(G, Start)
+            If nodes are numbers - then choose data structure arrays - index is keys
+            If nodes are string or objects - then choose maps - object id is keys
+
+            BFS1(G, Start)
 
             for all v of V {
-                dist[v] = INFINITY
+                dist[v] = INFINITY, prev[v] = null
             }
             Queue = {Start}
-            dist[Start] = 0
+            distanceOrLayer[Start] = 0
             while (!Q.isEmpty) {
                 u = Deque(Queue)
                 for all Edges (u, v) {
-                    if dist[v] = INFINITY {
+                    if distanceOrLayer[v] = INFINITY {
                         Enqueue(Q, v)
-                        dist[v] = dist[u] + 1
+                        distanceOrLayer[v] = distanceOrLayer[u] + 1, prev[v] = u
                     }
                 }
+            }
+
+            ReconstructionPath(G, End, Prev) {
+                result = []
+                while (End != S) {
+                    result.append(End)
+                    End = prev[End]
+                }
+                return reverse(result);
             }
 
 

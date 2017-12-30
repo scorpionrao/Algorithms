@@ -94,7 +94,7 @@ public class BasicDataStructures {
 
         Walking a tree:
 
-            BFS: Travel all nodes at one level before traversing child nodes
+            BFS1: Travel all nodes at one level before traversing child nodes
             DFS: Travel one sub-tree before invoking other.
 
         DFS - InOrder Traversal
@@ -130,7 +130,7 @@ public class BasicDataStructures {
             print(tree.key)
         }
 
-        BFS - LevelTraversal
+        BFS1 - LevelTraversal
 
         LevelTraversal(tree) {
             if(tree == null) {return}
