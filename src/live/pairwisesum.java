@@ -1,9 +1,8 @@
 package live;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class pairwisesum {
 
@@ -20,40 +19,56 @@ public class pairwisesum {
         for(int i = 0; i < array.length; i++) {
             if(array[i] < target) {
                 for(int j = i+1; j < array.length; j++) {
+                    // search, can be replaced by hash table
                     if(array[i] + array[j] == target) {
                         return new int[]{array[i], array[j]};
                     }
                 }
             }
         }
-        return new int[0];
+        return new int[2];
     }
 
-    /*
-        Faster solution
-        Time - O(N)
-        Space - O(N)
-     */
-    public static int[] getFirstPairFast(int[] array, int target) {
+    static Map<Integer, Integer> map;
+    public static void createMap(int[] array) {
+        map = new HashMap<>(array.length / 10);
+        for(Integer key : array) {
+            map.put(key, key);
+        }
+    }
 
-        Set<Integer> remainingRequired = new HashSet<>();
+    public static int[] getFirstPairFast(int[] array, int target) {
         for(int i = 0; i < array.length; i++) {
             if(array[i] < target) {
-                if(!remainingRequired.contains(array[i])) {
-                    remainingRequired.add(target - array[i]);
-                } else {
-                    return new int[]{target - array[i], array[i]};
+                Integer rem = map.get(target - array[i]);
+                if (rem != null) {
+                    return new int[]{array[i], target - array[i]};
                 }
             }
         }
-        return new int[0];
+        return new int[2];
     }
 
     public static void main(String[] args) {
-        int[] array = new int[]{1, 10, 6, 6, 8, 2, 3, 3};
-        int target = 6;
-        int[] firstPair = getFirstPairFast(array, target);
-        assert firstPair[0] + firstPair[1] == target;
-        System.out.println(firstPair[0] + " " + firstPair[1]);
+
+        int[] array = new int[10000000];
+        for(int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * (array.length / 2));
+        }
+
+        int target = (array.length / 2);
+        long start = System.nanoTime();
+        int[] firstPair = getFirstPair(array, target);
+        long end = System.nanoTime();
+        System.out.println("Naive: " + (end - start));
+
+        createMap(array);
+        start = System.nanoTime();
+        int[] firstPairFast = getFirstPairFast(array, target);
+        end = System.nanoTime();
+        System.out.println("Fast: " + (end - start));
+        if(firstPair[0] != firstPairFast[0] || firstPair[1] != firstPairFast[1]) {
+            System.out.println("Mismatch");
+        }
     }
 }
