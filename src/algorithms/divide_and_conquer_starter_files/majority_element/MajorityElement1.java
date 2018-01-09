@@ -1,3 +1,5 @@
+package algorithms.divide_and_conquer_starter_files.majority_element;
+
 import java.util.*;
 import java.io.*;
 

@@ -5,9 +5,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class Toposort {
+public class Topsort {
 
-    private static List<Integer> toposort(List<Integer>[] adj) {
+    private static List<Integer> topsort(List<Integer>[] adj) {
         List<Integer> order = dfs(adj);
         Collections.reverse(order);
         return order;
@@ -52,7 +52,7 @@ public class Toposort {
             y = scanner.nextInt();
             adj[x - 1].add(y - 1);
         }
-        List<Integer> order = toposort(adj);
+        List<Integer> order = topsort(adj);
         for (int x : order) {
             System.out.print((x + 1) + " ");
         }

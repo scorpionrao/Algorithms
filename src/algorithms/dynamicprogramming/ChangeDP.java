@@ -58,7 +58,7 @@ public class ChangeDP {
                             // while calculating for m, m-coin should have been already calculated
                             numOfCoins = minCoins(m - coin(d)) + 1
                             if(numOfCoins < minNumCoins) {
-                                minNumCoins = numOfCoins
+                                minNumCoins[m] = numOfCoins
                             }
                         }
                     }
