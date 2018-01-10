@@ -6,21 +6,21 @@ public class Brackets {
 
     static String isBalanced(String s) {
 
-        Stack<Character> stack = new Stack<>();
-        Map<Character, Character> map = new HashMap<Character, Character>(){
+        Stack<Integer> stack = new Stack<>();
+        Map<Integer, Integer> precompute = new HashMap<Integer, Integer>(){
             {
-                put('{', '}');
-                put('(', ')');
-                put('[', ']');
+                put(Character.getNumericValue('{'), Character.getNumericValue('}'));
+                put(Character.getNumericValue('('), Character.getNumericValue(')'));
+                put(Character.getNumericValue('['), Character.getNumericValue(']'));
             }
         };
 
         char[] charArray = s.toCharArray();
         for(int i = 0; i < charArray.length; i++) {
             if(charArray[i] == '{' || charArray[i] == '[' || charArray[i] == '(') {
-                stack.push(map.get(new Character(charArray[i])));
+                stack.push(precompute.get(Character.getNumericValue(charArray[i])));
             } else {
-                if(stack.isEmpty() || stack.pop().charValue() != charArray[i]) {
+                if(stack.isEmpty() || stack.pop() != Character.getNumericValue(charArray[i])) {
                     return "NO";
                 }
             }
