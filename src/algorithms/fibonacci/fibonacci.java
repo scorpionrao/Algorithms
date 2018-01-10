@@ -97,7 +97,7 @@ public class fibonacci {
     }
 
     /*while(true) {
-      // Range
+      // IndexRange
       int max = 45, min = 0;
       int randomNum = new Random().nextInt((max - min) + 1) + min;
       System.out.println("Size: " + randomNum);

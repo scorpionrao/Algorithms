@@ -9,12 +9,12 @@ public class ParkingLotProblem {
 
     // Will become generic if dealing with type of cars or type of spaces
     public static class ParkingLot {
-        public static final int SPACES = 3;
+        public static final int SPACES = 1000;
         public Queue<ParkingSpace> parkingSpaces = new LinkedList<>();
         public ParkingLot() {
-            for(int i = 0; i < SPACES - 1; i++) {
+            for(int i = 0; i < SPACES; i++) {
                 ParkingSpace space = new ParkingSpace();
-                space.setReservationEndTimeNow();
+                space.setReservationEndTimeBefore();
                 parkingSpaces.offer(space);
             }
         }
@@ -47,17 +47,18 @@ public class ParkingLotProblem {
             this.reservationEndTime = cal.getTime();
         }
 
-        public void setReservationEndTimeNow() {
+        public void setReservationEndTimeBefore() {
             Date date = new Date();
             Calendar cal = Calendar.getInstance();
             cal.setTime(date);
+            cal.add(Calendar.HOUR_OF_DAY, -1);
             this.reservationEndTime = cal.getTime();
         }
     }
 
     public static void main(String[] args) {
         ParkingLot lot = new ParkingLot();
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < 1000; i++) {
             lot.reserve();
         }
     }

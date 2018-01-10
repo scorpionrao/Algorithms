@@ -75,7 +75,7 @@ public class FibonacciSumLastDigit {
     public static void main(String[] args) {
 /*
         while(true) {
-            // Range
+            // IndexRange
             int max = 500, min = 100;
             int randomNum = new Random().nextInt((max - min) + 1) + min;
             System.out.println("Number: " + randomNum);

@@ -6,7 +6,7 @@ public class lettersandnumbers {
         for( int exploringLength = array.length; exploringLength > 1; exploringLength--) {
             System.out.println("Exploring length = " + exploringLength);
             for(int rangeBegin = 0; rangeBegin <= array.length - exploringLength; rangeBegin++) {
-                System.out.println("Range Begin = " + rangeBegin);
+                System.out.println("IndexRange Begin = " + rangeBegin);
                 int start = rangeBegin;
                 int end = rangeBegin + exploringLength - 1;
                 System.out.println("Start = " + start + ", End = " + end);

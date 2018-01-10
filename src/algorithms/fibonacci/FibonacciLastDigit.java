@@ -38,7 +38,7 @@ public class FibonacciLastDigit {
         System.out.println("Used Memory - KB: " + (double) (Runtime.getRuntime().totalMemory() - Runtime.getRuntime()
                 .freeMemory()) / 1024);
         while(true) {
-          // Range
+          // IndexRange
           int max = 10000000, min = 0;
           int randomNum = new Random().nextInt((max - min) + 1) + min;
           System.out.println("Index: " + randomNum);

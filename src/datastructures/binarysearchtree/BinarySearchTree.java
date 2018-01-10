@@ -5,7 +5,7 @@ public class BinarySearchTree {
     /*
         Local Search Problems:
             - Word Search   : Find a word in dictionary
-            - Date Range    : all emails in a given period
+            - Date IndexRange    : all emails in a given period
             - Closest       : closest person in height
 
         General: RangeSearch, NearestNeighbors

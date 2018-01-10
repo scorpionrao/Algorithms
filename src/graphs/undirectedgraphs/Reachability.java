@@ -44,6 +44,33 @@ public class Reachability {
         return 0;
     }
 
+    private static int dfs(int x, int y, ArrayList<Integer>[] adjacentList) {
+        boolean[] visited = new boolean[adjacentList.length];
+        for(int i = 0; i < adjacentList.length; i++) {
+            visited[i] = false;
+        }
+
+        for(int rootVertex = 0; rootVertex < adjacentList.length; rootVertex++) {
+            if(!visited[rootVertex]) {
+                explore(adjacentList, visited, rootVertex);
+            }
+            // specific to problem
+            if(visited[x] || visited[y]) {
+                return visited[x] == visited[y] ? 1 : 0;
+            }
+        }
+        return 0;
+    }
+
+    private static void explore(ArrayList<Integer>[] adjacentList, boolean[] visited, int rootVertex) {
+        visited[rootVertex] = true;
+        for(int oppositeVertex : adjacentList[rootVertex]) {
+            if(!visited[oppositeVertex]) {
+                explore(adjacentList, visited, oppositeVertex);
+            }
+        }
+    }
+
     private static void explore(int rootVertex,
                                 ArrayList<Integer>[] adjacentList,
                                 boolean[] visited) {
