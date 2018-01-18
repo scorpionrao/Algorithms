@@ -20,7 +20,7 @@ public class permutations {
     int permutation(String str, String prefix) {
         int count = 0;
         // n C r = n C 0 = n!
-        if(str.isEmpty()) {
+        if(str.isEmpty() || prefix.length() == str.length()) {
         // n C r = n C 2 = n! / 2
         // if(str.length() <= 2) {
             System.out.println(prefix);

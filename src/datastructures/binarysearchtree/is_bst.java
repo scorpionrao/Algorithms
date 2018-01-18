@@ -61,7 +61,7 @@ public class is_bst {
             if(index == -1) {
                 return true;
             }
-            if(tree[index].key == Integer.MAX_VALUE)
+            if(tree[index].key == Integer.MAX_VALUE) {return false;}
 
             if(tree[index].key < min || tree[index].key >= max) {
                 return false;

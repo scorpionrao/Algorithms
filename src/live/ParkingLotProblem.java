@@ -4,13 +4,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class ParkingLotProblem {
 
     // Will become generic if dealing with type of cars or type of spaces
     public static class ParkingLot {
         public static final int SPACES = 1000;
-        public Queue<ParkingSpace> parkingSpaces = new LinkedList<>();
+        public Queue<ParkingSpace> parkingSpaces = new ConcurrentLinkedQueue<>();
         public ParkingLot() {
             for(int i = 0; i < SPACES; i++) {
                 ParkingSpace space = new ParkingSpace();

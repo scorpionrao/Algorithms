@@ -50,7 +50,7 @@ public class pairwisesum {
     }
 
     public static void main(String[] args) {
-
+/*
         int[] array = new int[10000000];
         for(int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * (array.length / 2));
@@ -70,5 +70,14 @@ public class pairwisesum {
         if(firstPair[0] != firstPairFast[0] || firstPair[1] != firstPairFast[1]) {
             System.out.println("Mismatch");
         }
+        */
+
+        String str = "abcdefghijklmnopqrstuvwxyz";
+        int i = 0;
+        while(i<=str.length()-1) {
+            System.out.println(str.charAt(i) + " " + (int)str.charAt(i));
+            i++;
+        }
     }
+
 }
