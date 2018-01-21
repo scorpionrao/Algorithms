@@ -1,3 +1,5 @@
+package graphs.directedgraphs.graph_decomposition_starter_files_2.toposort;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;

@@ -1,3 +1,5 @@
+package algorithms.divide_and_conquer_starter_files.sorting;
+
 import java.io.*;
 import java.util.*;
 
@@ -16,12 +18,14 @@ public class Sorting1 {
 
     private static int partition2(int[] a, int l, int r) {
         int x = a[l];
+        int some = 0;
         int j = l;
         for (int i = l + 1; i <= r; i++) {
             if (a[i] <= x) {
                 j++;
                 int t = a[i];
                 a[i] = a[j];
+                some = 0;
                 a[j] = t;
             }
         }

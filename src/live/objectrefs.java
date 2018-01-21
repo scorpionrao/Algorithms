@@ -10,7 +10,7 @@ package live;
 
 // Givin the input as an
 // array of objects, input = [obj1, obj2, obj3, obj4]
-// dereference the refrece id to actual object content.
+// dereference the reference id to actual object content.
 // Below is the expected output.
 
 // expected = {
@@ -56,7 +56,11 @@ Psuedo code:
 */
 
 import java.util.*;
+
+import jdk.nashorn.internal.parser.JSONParser;
+
 public class objectrefs {
+
     public static class Input {
         int id;
         String name;
@@ -82,6 +86,8 @@ public class objectrefs {
                 }
             }
         }
+
+
 
         public void loadRefMap(Map<Integer, List<Integer>> map) {
             if(this.refs.isEmpty()) {
@@ -123,9 +129,55 @@ public class objectrefs {
         return order;
     }
 
+    public static class RequestObject {
+
+        public RequestObject() {
+
+        }
+
+        int id;
+        String name;
+        List<Integer> refs;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public List<Integer> getRefs() {
+            return refs;
+        }
+
+        public void setRefs(List<Integer> refs) {
+            this.refs = refs;
+        }
+
+    }
+
+    public static List<RequestObject> jsonParser(String[] objects) {
+        return null;
+
+    }
+
+
 
     public static void main(String[] args) {
 
+        //String str1 = {'id': 1,  'name': 'Joe',     'refs': [20, 21]}
+        //JSONParser jsonParser = new JSONParser("abc");
+
+        /*
         // obj1 = {'id': 1,  'name': 'Joe',     'refs': [20, 21]}
         // obj2 = {'id': 20, 'name': 'Harvard', 'refs': [80]}
         // obj3 = {'id': 21, 'name': 'MIT',     'refs': [80]}
@@ -165,7 +217,7 @@ public class objectrefs {
         Collections.reverse(order);
         Integer rootId = order.get(0);
         map.get(rootId).print(map);
-
+        */
 
     }
 }
