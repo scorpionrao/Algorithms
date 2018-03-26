@@ -1,4 +1,4 @@
-package main.java;
+package mit;
 
 public class CourseLabBST {
 	
