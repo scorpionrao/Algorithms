@@ -3,10 +3,11 @@ package mit;
 public class CourseLabDP2TextJustification {
 	
 	/*
-	 * Sub problems 		- # of subproblems
-	 * Guess				- # of choices
-	 * Recurrence			- time per sub problem
-	 * Topological order	- 
+	 * Sub problems 				- # of subproblems
+	 * Guess						- # of choices
+	 * Relate subproblem solution 	- time per sub problem
+	 * Topological sort				- Recurse / Memoize, Bottom-up
+	 * Solve original problem
 	 */
 	
 	/*
@@ -32,11 +33,17 @@ public class CourseLabDP2TextJustification {
 	 * Topological	: i = n, n-1,..., 0. Total time	: O(n^2)
 	 * Solve original problem : DP(0) => solve from 0th word onwards
 	 * 
-	 * 							Parent pointers:	remember which guess was best.
-	 * 							parent(i) = arg min(...) = best 'j' value for i.
+	 * Parent pointers:	remember which guess was best.
+	 * 							
 	 * 							1st line begins at: 0
 	 * 							2nd line begins at: parent(0)
 	 * 							3rd line begins at: parent(parent(0))
+	 * 
+	 * i = 0
+	 * while i is not None
+	 * 		start line before word i
+	 * 		i = DP[i][i]
+	 * 	
 	 */
 
 }

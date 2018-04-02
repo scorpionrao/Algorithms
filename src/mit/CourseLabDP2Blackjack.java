@@ -22,12 +22,15 @@ public class CourseLabDP2Blackjack {
 	 * 
 	 * BLACK JACK:
 	 * 
-	 * Sub problem	: suffixes of cards. #subproblems - n. Only decision - what cards that remain.
+	 * Sub problem	: BJ(i) = best play of Ci...Cn-1 where i = # cards
+	 * 					#subproblems - n. Only decision - what cards that remain.
 	 * 
-	 * Guess		: whether hit / stand given a card (OR) how many should I hit in the first play.
+	 * Guess		: how many times player hits
 	 * 					# number of choices = n.
 	 * 
-	 * Recurrence	: DP(i = cards left) = MAX { -1,0,1 + .... }
+	 * Recurrence	: DP(i = cards left) = MAX { -1,0,1 + DP(i + # cards used) } --> O(n)
+	 * 
+	 * 
 	 */
 
 }
